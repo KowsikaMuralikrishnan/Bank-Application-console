@@ -1,0 +1,52 @@
+Drop Existing Objects
+DROP TABLE TRANSFER_TBL;
+DROP TABLE ACCOUNT_TABLE;
+DROP SEQUENCE transaction_seq;
+
+Create Account Table
+CREATE TABLE ACCOUNT_TABLE (
+    Account_Number VARCHAR2(10) PRIMARY KEY,
+    Account_Name   VARCHAR2(50),
+    Balance        NUMBER(12,2)
+);
+
+Create Transaction Table
+CREATE TABLE TRANSFER_TBL (
+    Transaction_ID NUMBER PRIMARY KEY,
+    Account_Number VARCHAR2(10) NOT NULL,
+    Beneficiary_Account_Number VARCHAR2(10) NOT NULL,
+    Transaction_Date DATE DEFAULT SYSDATE,
+    Transaction_Amount NUMBER(12,2),
+    CONSTRAINT fk_account_new
+        FOREIGN KEY (Account_Number)
+        REFERENCES ACCOUNT_TABLE(Account_Number),
+    CONSTRAINT fk_beneficiary_new
+        FOREIGN KEY (Beneficiary_Account_Number)
+        REFERENCES ACCOUNT_TABLE(Account_Number)
+);
+
+Create Transaction Sequence
+CREATE SEQUENCE transaction_seq
+START WITH 1000
+INCREMENT BY 1
+NOCACHE;
+
+Insert Sample Data
+INSERT INTO ACCOUNT_TABLE VALUES ('ACC001', 'Ravi', 50000);
+INSERT INTO ACCOUNT_TABLE VALUES ('ACC002', 'Kumar', 30000);
+INSERT INTO ACCOUNT_TABLE VALUES ('ACC003', 'Anitha', 45000);
+
+COMMIT;
+
+View Tables
+SELECT * FROM ACCOUNT_TABLE;
+SELECT * FROM TRANSFER_TBL;
+
+Reset Database (Optional)
+TRUNCATE TABLE TRANSFER_TBL;
+
+UPDATE ACCOUNT_TABLE SET Balance = 50000 WHERE Account_Number = 'ACC001';
+UPDATE ACCOUNT_TABLE SET Balance = 30000 WHERE Account_Number = 'ACC002';
+UPDATE ACCOUNT_TABLE SET Balance = 45000 WHERE Account_Number = 'ACC003';
+
+COMMIT;
