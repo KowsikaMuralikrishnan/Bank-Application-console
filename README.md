@@ -166,13 +166,10 @@ COMMIT;
 
 Eclipse Console Output
 
-[Eclipse Output 1](https://github.com/user-attachments/assets/73a20324-6d57-4cf7-b15b-8ac4a94e4178)  
-[Eclipse Output 2](https://github.com/user-attachments/assets/4fc4fe35-6ec3-49e2-9618-f49a64703e72)
+<img width="1712" height="364" alt="image" src="https://github.com/user-attachments/assets/13a6608d-c2b3-446a-9fa2-565c7b538806" />
 
-Oracle Database Output
+<img width="1881" height="439" alt="image" src="https://github.com/user-attachments/assets/05f5b2b9-e34c-4757-9ccf-ea232804cba1" />
 
-[Oracle Output 1](https://github.com/user-attachments/assets/d9bcd31f-da00-4fd1-b2ef-65446adb66bd)  
-[Oracle Output 2](https://github.com/user-attachments/assets/0efcf434-6326-4608-bfde-36564b4a2a06)
 
 ---
 
